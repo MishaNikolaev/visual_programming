@@ -29,7 +29,7 @@ function QuickSortV2(array, L, R) {
 
 function compare(a, b) {
     if (typeof a !== 'object' || typeof b !== 'object' || !a.name || !a.age || !b.name || !b.age) {
-        throw new Error("Both elements should be objects with 'name' and 'age' properties.");
+        throw new Error("Elements should be objects");
     }
 
     if (a.age < b.age) return -1;   
@@ -42,11 +42,11 @@ function compare(a, b) {
 
 function orderBy(array) {
     if (!array.every(item => typeof item === 'object' && item !== null)) {
-        throw new Error('Elements aint object epta');
+        throw new Error('Element aint object');
     }
 
     if (!array.every(item => 'name' in item && 'age' in item)) {
-        throw new Error('gde peresilki, gde sravnenia, chto eto za hernya');
+        throw new Error('in object should be name and age');
     }
 
     const sortedArray = [...array];
@@ -59,7 +59,7 @@ const data = [
      { name: 'Anton', age: 23 },
     { name: 'Misha', age: 19 },
     { name: 'Katya', age: 19 },
-    { name: 'Kuku Epta', age: 100 },
+    { name: 'Kat', age: 100 },
     { name: 'Dima', age: 20 },
     { name: 'Dima', age: 19 }
 ];

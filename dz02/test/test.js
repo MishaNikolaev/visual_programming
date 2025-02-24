@@ -6,7 +6,7 @@ describe('orderBy function', () => {
             { name: 'Anton', age: 23 },
             { name: 'Misha', age: 19 },
             { name: 'Katya', age: 19 },
-            { name: 'Kuku Epta', age: 100 },
+            { name: 'Kat', age: 100 },
             { name: 'Dima', age: 20 },
             { name: 'Dima', age: 19 }
         ];
@@ -19,7 +19,7 @@ describe('orderBy function', () => {
             { name: 'Misha', age: 19 },
             { name: 'Dima', age: 20 },
             { name: 'Anton', age: 23 },
-            { name: 'Kuku Epta', age: 100 }
+            { name: 'Kat', age: 100 }
         ]);
     });
 
@@ -30,7 +30,7 @@ describe('orderBy function', () => {
             { name: 'Katya', age: 19 }
         ];
 
-        expect(() => orderBy(data)).toThrow('Elements aint object epta');
+        expect(() => orderBy(data)).toThrow('Element aint object');
     });
 
     test('should throw error cause field age is absent', () => {
@@ -40,6 +40,6 @@ describe('orderBy function', () => {
             { name: 'Katya', age: 19 }
         ];
 
-        expect(() => orderBy(data)).toThrow('gde peresilki, gde sravnenia, chto eto za hernya');
+        expect(() => orderBy(data)).toThrow('in object should be name and age');
     });
 });
